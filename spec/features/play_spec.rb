@@ -4,10 +4,7 @@
 
 feature 'Update screen with players names' do
   scenario 'Expects players to be able fill there names in form and see those names after submit' do
-    visit('/')
-    fill_in('player1_name', with: "Vu")
-    fill_in('player2_name', with: "Shweta")
-    click_button "Submit"
+    sign_in_and_play
     expect(page).to have_content('Vu vs Shweta')
   end
 end
@@ -18,10 +15,7 @@ end
 
 feature 'So that player 1 can check player 2 HP' do 
   scenario 'Expects player 2 to have a HP displayed on screen' do
-    visit('/')
-    fill_in('player1_name', with: "Vu")
-    fill_in('player2_name', with: "Shweta")
-    click_button "Submit"
+    sign_in_and_play
     expect(page).to have_content('Shweta: 100HP')
   end
 end
